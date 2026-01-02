@@ -211,6 +211,12 @@ class TalkingVideoProvider(ABC):
 python -m portrait_to_talking portrait.jpg -a audio.wav
 ```
 
+## TODO
+
+- [ ] 支持查询可用的 pose 列表（`--list-poses`）
+- [ ] 支持指定 pose（`--pose` 参数）
+- [ ] 支持自定义 pose 目录挂载
+
 ## License
 
 MIT License

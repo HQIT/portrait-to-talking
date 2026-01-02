@@ -13,6 +13,7 @@ class GenerationConfig:
     face_crop_ratio: float = 2.0
     height: int = 256
     width: Optional[int] = None
+    pose_dir: Optional[str] = None  # pose目录路径或名称
     extra: Dict[str, Any] = None
     
     def __post_init__(self):

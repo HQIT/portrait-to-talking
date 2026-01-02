@@ -39,6 +39,7 @@ class TalkingVideoClient:
         face_crop_ratio: float = 2.0,
         height: int = 256,
         width: Optional[int] = None,
+        pose_dir: Optional[str] = None,
         callback: Optional[Callable[[GenerationResult], None]] = None,
         # 向后兼容
         echomimic_url: Optional[str] = None
@@ -63,7 +64,8 @@ class TalkingVideoClient:
         self.config = GenerationConfig(
             face_crop_ratio=face_crop_ratio,
             height=height,
-            width=width
+            width=width,
+            pose_dir=pose_dir
         )
         
         # Provider 优先，否则使用默认 EchoMimicProvider

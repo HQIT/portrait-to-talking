@@ -61,14 +61,19 @@ def main():
     parser.add_argument(
         "--height",
         type=int,
-        default=256,
-        help="Output video height (default: 256)"
+        default=768,
+        help="Output video height (default: 768)"
     )
     
     parser.add_argument(
         "--width",
         type=int,
         help="Output video width (optional)"
+    )
+    
+    parser.add_argument(
+        "--pose-dir",
+        help="Pose directory path or name (e.g. '01', 'test_pose', or full path)"
     )
     
     # Provider options
@@ -114,6 +119,7 @@ def main():
             face_crop_ratio=args.face_crop_ratio,
             height=args.height,
             width=args.width,
+            pose_dir=args.pose_dir,
             echomimic_url=args.echomimic_url,
             callback=on_complete if args.verbose else None
         )

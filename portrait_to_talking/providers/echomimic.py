@@ -36,7 +36,7 @@ class EchoMimicProvider(TalkingVideoProvider):
         url: str = None,
         silent_audio: str = None,
         talking_audio: str = None,
-        timeout: int = 300
+        timeout: int = 1800  # 30 分钟，推理较慢
     ):
         """
         初始化 EchoMimic Provider。
@@ -87,6 +87,9 @@ class EchoMimicProvider(TalkingVideoProvider):
         
         if config.width:
             data["config"]["width"] = config.width
+        
+        if config.pose_dir:
+            data["pose_dir"] = config.pose_dir
         
         if config.extra:
             data["config"].update(config.extra)
